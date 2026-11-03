@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://coolvibes.lgbt/images/brand/dott-v3/wordmark.png" alt="CoolVibes — gay social network and LGBTQIA+ community" width="360">
+  <img src="https://coolvibes.gay/images/brand/dott-v3/wordmark.png" alt="CoolVibes — gay social network and LGBTQIA+ community" width="360">
 </p>
 
 # CoolVibes — Gay Social Network & LGBTQIA+ Dating
@@ -10,7 +10,7 @@ With **CoolVibes for Visual Studio Code**, your community is a click away. Brows
 
 **For adults aged 18 and over.** Gay, bi, lesbian, trans, queer and other LGBTQIA+ people, along with respectful allies, are welcome.
 
-[Join CoolVibes](https://coolvibes.lgbt) · [Install from Marketplace](https://marketplace.visualstudio.com/items?itemName=CoolVibes.coolvibes-vscode-extension) · [Help and community rules](https://coolvibes.lgbt/legal)
+[Join CoolVibes](https://coolvibes.gay) · [Install from Marketplace](https://marketplace.visualstudio.com/items?itemName=CoolVibes.coolvibes-vscode-extension) · [Help and community rules](https://coolvibes.gay/legal)
 
 ## A community beyond the swipe
 
@@ -78,7 +78,7 @@ Arabic, Persian and Hebrew support right-to-left layouts. Localized welcome page
 
 ## Choose what you share
 
-Use profile visibility, private-photo permissions, blocking and reporting controls to manage your experience. Treat other members with respect and follow the [community rules](https://coolvibes.lgbt/legal). Private conversations and restricted photos follow account access controls; private messaging is not a claim of end-to-end encryption.
+Use profile visibility, private-photo permissions, blocking and reporting controls to manage your experience. Treat other members with respect and follow the [community rules](https://coolvibes.gay/legal). Private conversations and restricted photos follow account access controls; private messaging is not a claim of end-to-end encryption.
 
 ## Start using CoolVibes in VS Code
 
@@ -87,7 +87,7 @@ Use profile visibility, private-photo permissions, blocking and reporting contro
 3. Sign in with your CoolVibes account and explore the community.
 4. For a larger view, open the Command Palette and select **CoolVibes: Open Panel**.
 
-New here? Create your account at [coolvibes.lgbt](https://coolvibes.lgbt), then return to the extension and sign in. Your sign-in stays synchronized between the extension's sidebar and panel. External links open in your browser.
+New here? Create your account at [coolvibes.gay](https://coolvibes.gay), then return to the extension and sign in. Your sign-in stays synchronized between the extension's sidebar and panel. External links open in your browser.
 
 You need **VS Code 1.85 or later**, an internet connection and a CoolVibes account for member features. Public artwork loads from the CoolVibes website. Location, live media and payments remain subject to device permissions and service availability; some actions may open or require the website.
 
@@ -97,8 +97,8 @@ These existing screenshots show the **actual CoolVibes web interface** used by t
 
 ## Stay connected
 
-- [Visit CoolVibes](https://coolvibes.lgbt)
-- [Read help, privacy information and community rules](https://coolvibes.lgbt/legal)
+- [Visit CoolVibes](https://coolvibes.gay)
+- [Read help, privacy information and community rules](https://coolvibes.gay/legal)
 - [Report an extension issue](https://github.com/CoolVibesLGBT/vscode_extension/issues)
 - [See release notes](CHANGELOG.md)
 - [Developer and publishing guide](DEVELOPMENT.md)

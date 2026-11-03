@@ -127,7 +127,7 @@ const webviewCssAssets = {
       /url\(\s*(['"]?)([^)'"\s]+)\1\s*\)/g,
       (match, quote, target) => {
         if (/^\/(?:images|icons|animations|gifts|fonts|stickers|data)\//.test(target)) {
-          return `url(${quote}https://coolvibes.lgbt${target}${quote})`
+          return `url(${quote}https://coolvibes.gay${target}${quote})`
         }
         let localFile
         if (/^fonts\/KaTeX_[^/]+\.(?:woff2?|ttf)$/.test(target)) {
@@ -216,7 +216,7 @@ const rewriteAbsoluteCssAssetUrls = async () => {
     const originalCss = await fs.readFile(cssPath, 'utf8')
     const rewrittenCss = originalCss.replace(
       /url\((['"]?)\/(?!\/)/g,
-      'url($1https://coolvibes.lgbt/'
+      'url($1https://coolvibes.gay/'
     )
 
     if (rewrittenCss !== originalCss) {

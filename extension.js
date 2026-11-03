@@ -9,15 +9,15 @@ const PANEL_VIEW_TYPE = 'coolvibes.panel'
 const OPEN_PANEL_COMMAND = 'coolvibes.openPanel'
 const AUTH_STATE_SECRET = 'coolvibes.auth-state.v1'
 
-const APP_URL = 'https://coolvibes.lgbt'
-const APP_DOMAIN = 'coolvibes.lgbt'
+const APP_URL = 'https://coolvibes.gay'
+const APP_DOMAIN = 'coolvibes.gay'
 const SERVICE_URL = [
-  'https://api.coolvibes.lgbt',
-  'https://api.coolvibes.lgbt',
+  'https://api.coolvibes.gay',
+  'https://api.coolvibes.gay',
 ]
 const SOCKET_URL = [
-  'wss://socket.coolvibes.lgbt',
-  'wss://socket2.coolvibes.lgbt',
+  'wss://socket.coolvibes.gay',
+  'wss://socket2.coolvibes.gay',
 ]
 
 const ALLOWED_EXTERNAL_SCHEMES = new Set(['http', 'https', 'mailto'])
@@ -449,7 +449,7 @@ function getContentSecurityPolicy(webview, nonce) {
     "base-uri 'none'",
     `img-src ${webview.cspSource} https: data: blob:`,
     `style-src ${webview.cspSource} 'unsafe-inline'`,
-    `font-src ${webview.cspSource} https://coolvibes.lgbt data:`,
+    `font-src ${webview.cspSource} https://coolvibes.gay data:`,
     `script-src 'nonce-${nonce}' ${webview.cspSource} https://www.google.com https://www.gstatic.com https://www.recaptcha.net https://platform.twitter.com https://cdn.syndication.twimg.com https://pay.google.com`,
     `connect-src ${webview.cspSource} https: wss:`,
     'frame-src https:',

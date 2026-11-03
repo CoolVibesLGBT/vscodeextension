@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.12
+
+- Update application, API, socket and public asset URLs to coolvibes.gay
+- Rebuild with the current web application, including registration captcha disabled by default
+
 ## 0.0.11
 
 - Rewrite the Marketplace listing around CoolVibes as a gay social network and LGBTQIA+ dating community
