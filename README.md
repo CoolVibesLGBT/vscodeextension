@@ -99,6 +99,6 @@ These existing screenshots show the **actual CoolVibes web interface** used by t
 
 - [Visit CoolVibes](https://coolvibes.gay)
 - [Read help, privacy information and community rules](https://coolvibes.gay/legal)
-- [Report an extension issue](https://github.com/CoolVibesLGBT/vscode_extension/issues)
+- [Report an extension issue](https://github.com/CoolVibesLGBT/vscodeextension/issues)
 - [See release notes](CHANGELOG.md)
 - [Developer and publishing guide](DEVELOPMENT.md)

@@ -7,11 +7,11 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/CoolVibesLGBT/vscode_extension.git"
+    "url": "https://github.com/CoolVibesLGBT/vscodeextension.git"
   },
-  "homepage": "https://github.com/CoolVibesLGBT/vscode_extension",
+  "homepage": "https://github.com/CoolVibesLGBT/vscodeextension",
   "bugs": {
-    "url": "https://github.com/CoolVibesLGBT/vscode_extension/issues"
+    "url": "https://github.com/CoolVibesLGBT/vscodeextension/issues"
   },
   "engines": {
     "vscode": "^1.85.0"

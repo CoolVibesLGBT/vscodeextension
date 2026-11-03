@@ -1,0 +1,90 @@
+name: Release workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      web_ref:
+        description: Web branch, tag or commit to bundle
+        required: true
+        default: main
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: marketplace-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      COOLVIBES_WEB_ROOT: ${{ github.workspace }}/web
+    steps:
+      - name: Checkout extension
+        uses: actions/checkout@v4
+        with:
+          path: extension
+          persist-credentials: false
+
+      - name: Checkout web application
+        uses: actions/checkout@v4
+        with:
+          repository: CoolVibesLGBT/web
+          ref: ${{ inputs.web_ref }}
+          path: web
+          # Required only when the web repository is private: read-only deploy key.
+          ssh-key: ${{ secrets.WEB_DEPLOY_KEY }}
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable Yarn Classic
+        run: |
+          corepack enable
+          corepack prepare yarn@1.22.22 --activate
+
+      - name: Install web dependencies
+        working-directory: web
+        run: yarn install --frozen-lockfile
+
+      - name: Install extension dependencies
+        working-directory: extension
+        run: yarn install --frozen-lockfile
+
+      - name: Check web and extension
+        run: |
+          yarn --cwd web lint
+          (cd web && node scripts/check-interface-regressions.mjs)
+          yarn --cwd extension check
+          yarn --cwd extension check:assets
+        working-directory: ${{ github.workspace }}
+
+      - name: Build VSIX
+        working-directory: extension
+        run: ./deploy.sh "$COOLVIBES_WEB_ROOT"
+
+      - name: Save VSIX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coolvibes-vsix
+          path: extension/*.vsix
+          if-no-files-found: error
+
+      # The repository's packaging CLI (3.9.2) predates --oidc.
+      - name: Install publishing CLI with Trusted Publishing support
+        run: yarn global add @vscode/vsce@latest
+
+      - name: Publish to Visual Studio Marketplace using OIDC
+        working-directory: extension
+        run: |
+          package_path="$(node -p 'const p = require("./package.json"); `${p.name}-${p.version}.vsix`')"
+          "$(yarn global bin)/vsce" publish --packagePath "$package_path" --oidc

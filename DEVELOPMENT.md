@@ -48,3 +48,20 @@ yarn run check:assets:browser
 ```
 
 Browser checks require Chrome and the web workspace’s Playwright dependencies.
+
+## GitHub Actions Trusted Publishing
+
+`.github/workflows/publish.yml` builds the extension and publishes the saved VSIX with OIDC. No Marketplace PAT or Azure login is used. Create this policy under the **CoolVibes** Marketplace publisher:
+
+- Policy name: `Release workflow`
+- Provider: GitHub Actions
+- Repository owner: `CoolVibesLGBT`
+- Repository: `vscodeextension` (not a URL)
+- Workflow: `publish.yml`
+- Environment: `production`
+
+Create the `production` environment in the extension repository. If `CoolVibesLGBT/web` is private, add a read-only SSH deploy key to that repository and store its private key as the extension repository/environment secret `WEB_DEPLOY_KEY`. Public web repositories need no key. This is source checkout access, not a Marketplace publishing credential.
+
+Push the workflow and extension changes to GitHub, and push the desired web changes to `CoolVibesLGBT/web` first: local uncommitted changes are not included by Actions. Increase `package.json` version before publishing a version already present on Marketplace. Open **Actions → Release workflow → Run workflow**, select the extension branch and enter the web branch/tag/commit (default `main`). Use a commit SHA for reproducible web sources. The workflow retains the VSIX as an artifact even if publishing fails. It runs manually and does not publish on every push.
+
+The publishing step installs the latest vsce because the pinned packaging CLI 3.9.2 does not support `--oidc`. For private extension repositories, run the workflow within 48 hours of creating the policy to activate it.
